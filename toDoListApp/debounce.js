@@ -1,0 +1,3 @@
+function debounce(func, delay) {
+    //
+}
