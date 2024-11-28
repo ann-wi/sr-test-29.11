@@ -22,6 +22,7 @@ const addTask = (task) => {
   newTask.appendChild(doneButton);
 
   taskInput.value = "";
+  completeTask(doneButton);
 };
 
 const completeTask = (btn) => {
