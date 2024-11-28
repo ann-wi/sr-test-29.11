@@ -10,10 +10,14 @@ const addTask = (task) => {
   const inputValue = taskInput.value;
 
   const newTask = document.createElement("li");
-  newTask.setAttribute("value", inputValue);
   newTask.setAttribute("class", "tasksElem");
 
+  const doneButton = document.createElement("button");
+  doneButton.setAttribute("class", "doneButton");
+  doneButton.setAttribute("type", "button");
+
   tasks.appendChild(newTask);
+  newTask.appendChild(doneButton);
 
   taskInput.value = "";
 };
