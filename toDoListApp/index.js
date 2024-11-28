@@ -1,14 +1,23 @@
-let form = document.getElementById("form");
-let taskInput = document.getElementById("taskInput");
-let submitButton = document.getElementById("submitButton");
-let tasksSection = document.getElementById("tasksSection");
-let tasks = document.getElementById("tasks");
+const form = document.getElementById("form");
+const taskInput = document.getElementById("taskInput");
+const submitButton = document.getElementById("submitButton");
+const tasksSection = document.getElementById("tasksSection");
+const tasks = document.getElementById("tasks");
 
-submitButton.onclick = function() {
-  console.log("test");
+const addTask = (task) => {
+  task.preventDefault();
+
+  const inputValue = taskInput.value;
+
+  const newTask = document.createElement("div");
+  newTask.className = "tasksElem";
+  newTask.innerHTML = `
+    <li>${inputValue}</li>
+  `;
+
+  tasks.appendChild(newTask);
+
+  taskInput.value = "";
 };
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let newTaskInputValue = form.elements.taskInput;
-})
+form.addEventListener("submit", addTask);
