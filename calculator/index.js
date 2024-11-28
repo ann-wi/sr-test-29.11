@@ -18,8 +18,6 @@ class Calculator {
     this.operation = undefined;
   }
 
-  const calc = new Calculator(currentOperand, previousOperand);
-
   numberButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       calc.appendNumber(btn.innerText);
@@ -119,3 +117,5 @@ class Calculator {
   }
   
 }
+
+const calc = new Calculator(currentOperand, previousOperand);
