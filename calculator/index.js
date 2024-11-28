@@ -24,8 +24,8 @@ class Calculator {
   }
   
   updateOutput(){
-     this.currentOperandElem.innerText = this.currentOperand;
-     this.previousOperandElem.innerText = this.previousOperand;
+     this.currentOperandElem.value= this.currentOperand;
+     this.previousOperandElem.value = this.previousOperand;
    }
 
   selectOperation(oper) {
