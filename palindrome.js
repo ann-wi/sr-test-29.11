@@ -1,11 +1,8 @@
 function isPalindrome(str) {
-    let reverse = str.split("").reverse().join("");
-
-    if (rev == str) {
-        return true;
-    }
-
-    return false;
+    let reg = /[\W_]/g;
+    let strToLowerCase = str.toLowerCase().replace(reg, '');
+    let reversedStr = strToLowerCase.split('').reverse().join(''); 
+    return reversedStr === strToLowerCase;
 }
 
-console.log(isPalindrome("А роза упала на лапу Азора"));
+isPalindrome("А роза упала на лапу Азора");
