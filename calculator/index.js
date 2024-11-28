@@ -18,13 +18,6 @@ class Calculator {
     this.operation = undefined;
   }
 
-  numberButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      calc.appendNumber(btn.innerText);
-      calc.updateOutput();
-    })
-  })
-
   appendNumber(num){
      this.currentOperand = this.currentOperand.toString() + number.toString();
    }
@@ -33,13 +26,6 @@ class Calculator {
      this.currentOperandElem.innerText = this.currentOperand;
      this.previousOperandElem.innerText = this.previousOperand;
    }
-
-  operationButtons.forEach(btn => {
-    button.addEventListener("click", () => {
-      calc.selectOperation(button.innerText)
-      calc.updateOutput()
-    })
-  })
 
   selectOperation(oper) {
       if (this.currentOperand === "") return
@@ -50,11 +36,6 @@ class Calculator {
       this.previousOperand = this.currentOperand;
       this.currentOperand = "";
   }
-
-  equalsButton.addEventListener("click", btn => {
-      calc.compute()
-      calc.updateOutput()
-  })
 
   compute() {
     let result;
@@ -82,11 +63,6 @@ class Calculator {
     this.operation = undefined;
     this.previousOperand = "";
   }
-
-  clearButton.addEventListener("click", btn => {
-    calc.clear();
-    calc.updateOutput();
-  })
 
   updateOutput() {
     this.currentOperandElem.innerText =
@@ -119,3 +95,27 @@ class Calculator {
 }
 
 const calc = new Calculator(currentOperand, previousOperand);
+
+numberButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      calc.appendNumber(btn.innerText);
+      calc.updateOutput();
+    })
+})
+  
+operationButtons.forEach(btn => {
+    button.addEventListener("click", () => {
+      calc.selectOperation(button.innerText)
+      calc.updateOutput()
+    })
+})
+
+equalsButton.addEventListener("click", btn => {
+      calc.compute()
+      calc.updateOutput()
+})
+
+clearButton.addEventListener("click", btn => {
+    calc.clear();
+    calc.updateOutput();
+})
