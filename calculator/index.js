@@ -28,12 +28,12 @@ class Calculator {
      this.previousOperandElem.innerText = this.previousOperand;
    }
 
-  selectOperation(oper) {
+  selectOperation(operation) {
       if (this.currentOperand === "") return
       if(this.previousOperand != "") {
         this.compute()
       }
-      this.operation = oper;
+      this.operation = operation;
       this.previousOperand = this.currentOperand;
       this.currentOperand = "";
   }
@@ -66,9 +66,9 @@ class Calculator {
   }
 
   updateOutput() {
-    this.currentOperand.innerHTML = this.currentOperand;
+    this.currentOperand.innerText = this.currentOperand;
     if (this.operation != null) {
-      this.previousOperand.innerHTML = `${this.previousOperand} ${this.operation}`;
+      this.previousOperand.innerText = `${this.previousOperand} ${this.operation}`;
     }
   }
   
@@ -78,14 +78,14 @@ const calc = new Calculator(currentOperand, previousOperand);
 
 Array.from(numberButtons).forEach(button => {
     button.addEventListener("click", () => {
-      calc.appendNumber(button.innerHTML);
+      calc.appendNumber(button.innerText);
       calc.updateOutput();
     })
 })
   
 Array.from(operationButtons).forEach(button => {
     button.addEventListener("click", () => {
-      calc.selectOperation(button.innerHTML)
+      calc.selectOperation(button.innerText)
       calc.updateOutput()
     })
 })
