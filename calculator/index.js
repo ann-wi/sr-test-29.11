@@ -78,14 +78,14 @@ const calc = new Calculator(currentOperand, previousOperand);
 
 Array.from(numberButtons).forEach(button => {
     button.addEventListener("click", () => {
-      calc.appendNumber(button.innerText);
+      calc.appendNumber(button.innerHTML);
       calc.updateOutput();
     })
 })
   
 Array.from(operationButtons).forEach(button => {
     button.addEventListener("click", () => {
-      calc.selectOperation(button.innerText)
+      calc.selectOperation(button.innerHTML)
       calc.updateOutput()
     })
 })
