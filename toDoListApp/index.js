@@ -11,7 +11,7 @@ const addTask = (task) => {
 
   const newTask = document.createElement("li");
   newTask.setAttribute("class", "tasksElem");
-  newTask.innerText = taskInput;
+  newTask.innerText = inputValue;
 
   const doneButton = document.createElement("button");
   doneButton.setAttribute("class", "doneButton");
