@@ -13,25 +13,34 @@ const addTask = (task) => {
   newTask.setAttribute("class", "tasksElem");
   newTask.innerText = inputValue;
 
-  const doneButton = document.createElement("button");
-  doneButton.setAttribute("class", "doneButton");
-  doneButton.setAttribute("type", "button");
-  doneButton.innerText = "x";
+  const deleteButton = document.createElement("button");
+  deleteButton.setAttribute("class", "doneButton");
+  deleteButton.setAttribute("type", "button");
+  deleteButton.innerText = "x";
 
   tasks.appendChild(newTask);
-  newTask.appendChild(doneButton);
+  newTask.appendChild(deleteButton);
 
   taskInput.value = "";
-  completeTask(doneButton);
+  completeTask(newTask);
+  removeTask(deleteButton);
 };
 
-const completeTask = (btn) => {
-  btn.addEventListener("click", (e) => {
-    const completeBtn = e.target;
-    const taskDone = completeBtn.parentElement;
-    taskDone.classList.add("taskCompleted");
+const completeTask = (task) => {
+  task.addEventListener("click", (e) => {
+    const completeTask = e.target;
+    
+    completeTask.classList.add("taskCompleted");
     }
   );  
+}
+
+const removeTask = (btn) => {
+  btn.addEventListener("click", (e) => {
+    const removedTask = e.target;
+    removedTask.parentElement.remove();
+    }
+  ); 
 }
 
 form.addEventListener("submit", addTask);
