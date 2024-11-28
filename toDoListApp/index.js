@@ -9,15 +9,20 @@ const addTask = (task) => {
 
   const inputValue = taskInput.value;
 
-  const newTask = document.createElement("div");
-  newTask.className = "tasksElem";
-  newTask.innerHTML = `
-    <li>${inputValue}</li>
-  `;
+  const newTask = document.createElement("li");
+  newTask.setAttribute("value", inputValue);
+  newTask.setAttribute("class", "tasksElem");
 
   tasks.appendChild(newTask);
 
   taskInput.value = "";
 };
+
+/*
+const completeTask = (e) => {
+  const task = e.target;
+  
+}
+*/
 
 form.addEventListener("submit", addTask);
