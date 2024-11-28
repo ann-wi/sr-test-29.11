@@ -1,7 +1,7 @@
-const currentOperandElem = document.getElementsById("currentOperand");
-const previousOperandElem = document.getElementsById("previousOperand");
-const equalsButton = document.getElementsById("equals");
-const clearButton = document.getElementsById("clear");
+const currentOperandElem = document.getElementById("currentOperand");
+const previousOperandElem = document.getElementById("previousOperand");
+const equalsButton = document.getElementById("equals");
+const clearButton = document.getElementById("clear");
 const numberButtons = document.getElementsByClassName("number");
 const operationButtons = document.getElementsByClassName("operation");
 
