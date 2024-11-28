@@ -15,12 +15,13 @@ class Calculator {
   clear() {
     this.currentOperand = "";
     this.previousOperand = "";
-    this.operation = undefined;
+    this.operation = null;
   }
 
-  appendNumber(num){
-     this.currentOperand = this.currentOperand.toString() + number.toString();
-   }
+  appendNumber(number) {
+    if (number === "." && this.currentOperand.includes(".")) return;
+    this.currentOperand = this.currentOperand.toString() + number.toString();
+  }
   
   updateOutput(){
      this.currentOperandElem.innerText = this.currentOperand;
@@ -65,30 +66,9 @@ class Calculator {
   }
 
   updateOutput() {
-    this.currentOperandElem.innerText =
-      this.getOutputNumber(this.currentOperand)
+    this.currentOperand.innerText = this.currentOperand;
     if (this.operation != null) {
-      this.previousOperandElem.innerText =
-        `${this.getOutputNumber(this.previousOperand)} ${this.operation}`
-    } else {
-      this.previousOperandElem.innerText = ""
-    }
-  }
-
-  getOutputNumber(number) {
-    const stringNumber = number.toString();
-    const integerDigits = parseFloat(stringNumber.split('.')[0]);
-    const decimalDigits = stringNumber.split('.')[1];
-    let integerOutput;
-    if (isNaN(integerDigits)) {
-      integerOutput = ''
-    } else {
-      integerOutput = integerDigits.toLocaleString('en', { maximumFractionDigits: 0 });
-    }
-    if (decimalDigits != null) {
-      return `${integerOutput}.${decimalDigits}`
-    } else {
-      return integerOutput;
+      this.previousOperand.innerText = `${this.previousOperand} ${this.operation}`;
     }
   }
   
