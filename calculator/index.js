@@ -78,6 +78,7 @@ const calc = new Calculator(currentOperand, previousOperand);
 
 Array.from(numberButtons).forEach(button => {
     button.addEventListener("click", () => {
+      console.log(button);
       calc.appendNumber(button.innerText);
       calc.updateOutput();
     })
@@ -85,6 +86,7 @@ Array.from(numberButtons).forEach(button => {
   
 Array.from(operationButtons).forEach(button => {
     button.addEventListener("click", () => {
+      console.log(button);
       calc.selectOperation(button.innerText)
       calc.updateOutput()
     })
