@@ -28,7 +28,7 @@ const addTask = (task) => {
 const completeTask = (btn) => {
   btn.addEventListener("click", (e) => {
     const doneTask = e.target;
-    doneTask.classList.add("taskCompleted");
+    doneTask.parentElement.classList.add("taskCompleted");
     }
   );  
 }
