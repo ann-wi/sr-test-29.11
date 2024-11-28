@@ -104,7 +104,7 @@ Array.from(numberButtons).forEach(btn => {
 })
   
 Array.from(operationButtons).forEach(btn => {
-    button.addEventListener("click", () => {
+    btn.addEventListener("click", () => {
       calc.selectOperation(btn.innerText)
       calc.updateOutput()
     })
