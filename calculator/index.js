@@ -106,7 +106,7 @@ numberButtons.forEach(btn => {
   
 operationButtons.forEach(btn => {
     button.addEventListener("click", () => {
-      calc.selectOperation(button.innerText)
+      calc.selectOperation(btn.innerText)
       calc.updateOutput()
     })
 })
