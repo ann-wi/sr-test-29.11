@@ -24,11 +24,12 @@ const addTask = (task) => {
   taskInput.value = "";
 };
 
-/*
-const completeTask = (e) => {
-  const task = e.target;
-  
+const completeTask = (btn) => {
+  btn.addEventListener("click", (e) => {
+    const elem = e.toElement.parentElement;
+    elem.classList.add("taskCompleted");
+    }
+  );  
 }
-*/
 
 form.addEventListener("submit", addTask);
