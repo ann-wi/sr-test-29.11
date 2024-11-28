@@ -94,6 +94,7 @@ class Calculator {
   
 }
 
+//
 const calc = new Calculator(currentOperand, previousOperand);
 
 numberButtons.forEach(btn => {
