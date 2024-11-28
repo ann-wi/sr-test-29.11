@@ -11,10 +11,12 @@ const addTask = (task) => {
 
   const newTask = document.createElement("li");
   newTask.setAttribute("class", "tasksElem");
+  newTask.innerText = taskInput;
 
   const doneButton = document.createElement("button");
   doneButton.setAttribute("class", "doneButton");
   doneButton.setAttribute("type", "button");
+  doneButton.innerText = "x";
 
   tasks.appendChild(newTask);
   newTask.appendChild(doneButton);
